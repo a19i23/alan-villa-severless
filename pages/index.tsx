@@ -7,6 +7,35 @@ import BlogPostCard from '../components/BlogPostCard';
 import Subscribe from '../components/Subscribe';
 import VideoCard from '../components/VideoCard';
 
+const warningIcon = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    strokeWidth={1.5}
+    stroke="currentColor"
+    className="w-6 h-6 text-gray-600 dark:text-gray-400"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"
+    />
+  </svg>
+);
+
+const skills = [
+  'Typescript',
+  'React',
+  'NextJs',
+  'NodeJs',
+  'Ruby',
+  'MongoDB',
+  'Express',
+  'Java',
+  'Python'
+];
+
 export default function Home() {
   return (
     <Suspense fallback={null}>
@@ -15,20 +44,34 @@ export default function Home() {
           <div className="flex flex-col-reverse sm:flex-row items-start">
             <div className="flex flex-col pr-8">
               <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-1 text-black dark:text-white">
-                Lee Robinson
+                Alan Villa
               </h1>
               <h2 className="text-gray-700 dark:text-gray-200 mb-4">
-                VP of Developer Experience at{' '}
-                <span className="font-semibold">Vercel</span>
+                Senior Software Engineer{' '}
+                <span className="font-semibold">Procore</span>
               </h2>
-              <p className="text-gray-600 dark:text-gray-400 mb-16">
-                Helping developers build a faster web. Teaching about web
-                development, serverless, and React / Next.js.
+              <p className="text-gray-600 dark:text-gray-400 mb-6">
+                I'm currently working in a full stack capacity developing web
+                applications.
               </p>
+              <p className="text-gray-600 dark:text-gray-400">
+                Experience with:
+              </p>
+
+              <ul className="grid grid-flow-row-dense grid-cols-3 grid-rows-3 mb-12">
+                {skills.map((skill) => (
+                  <li
+                    key={skill}
+                    className="text-gray-600 dark:text-gray-400 ml-2"
+                  >
+                    {skill}
+                  </li>
+                ))}
+              </ul>
             </div>
             <div className="w-[80px] sm:w-[176px] relative mb-8 sm:mb-0 mr-auto">
               <Image
-                alt="Lee Robinson"
+                alt="Alan Villa"
                 height={176}
                 width={176}
                 src="/avatar.jpg"
@@ -38,7 +81,14 @@ export default function Home() {
               />
             </div>
           </div>
-
+          <div className="flex">
+            {warningIcon}
+            <p className="text-gray-600 dark:text-gray-400 mb-16 mx-2">
+              This site is under construction
+            </p>
+            {warningIcon}
+          </div>
+          {/* 
           <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-6 text-black dark:text-white">
             Featured Posts
           </h3>
@@ -77,9 +127,9 @@ export default function Home() {
                 />
               </svg>
             </a>
-          </Link>
+          </Link> */}
 
-          <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-16 text-black dark:text-white">
+          {/* <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-16 text-black dark:text-white">
             Learn React & Next.js
           </h3>
           <p className="text-gray-600 dark:text-gray-400 mb-4">
@@ -134,7 +184,7 @@ export default function Home() {
             </svg>
           </a>
           <span className="h-16" />
-          <Subscribe />
+          <Subscribe / */}
         </div>
       </Container>
     </Suspense>

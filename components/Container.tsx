@@ -38,8 +38,8 @@ export default function Container(props) {
   const { children, ...customMeta } = props;
   const router = useRouter();
   const meta = {
-    title: 'Lee Robinson – Developer, writer, creator.',
-    description: `Front-end developer, JavaScript enthusiast, and course creator.`,
+    title: 'Alan Villa – Developer, father, creator.',
+    description: `Full stack developer, software and technology enthusiast`,
     image: 'https://leerob.io/static/images/lee-banner.png',
     type: 'website',
     ...customMeta
@@ -75,10 +75,10 @@ export default function Container(props) {
           <div className="ml-[-0.60rem]">
             <MobileMenu />
             <NavItem href="/" text="Home" />
-            <NavItem href="/guestbook" text="Guestbook" />
+            {/* <NavItem href="/guestbook" text="Guestbook" /> */}
             <NavItem href="/dashboard" text="Dashboard" />
-            <NavItem href="/blog" text="Blog" />
-            <NavItem href="/snippets" text="Snippets" />
+            {/* <NavItem href="/blog" text="Blog" /> */}
+            {/* <NavItem href="/snippets" text="Snippets" /> */}
           </div>
           <button
             aria-label="Toggle Dark Mode"
@@ -121,7 +121,7 @@ export default function Container(props) {
         className="flex flex-col justify-center px-8 bg-gray-50 dark:bg-gray-900"
       >
         {children}
-        <Footer />
+        {/* <Footer /> */}
       </main>
     </div>
   );
